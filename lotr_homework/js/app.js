@@ -107,14 +107,18 @@ hobbits.forEach(element => {
 const keepItSecretKeepItSafe = () => {
 
   // 1. create an empty div with an id of 'the-ring'
-const ring = "<div id = the-ring></div>"
+const ring = "<div id ='the-ring'></div>";
   // 2. add the ring as a child of Frodo
-
+  // .each iterates over a jquery object and executes a function for matched elements
+  $(".hobbit").each(function(){
+  if($(this).text() === "Frodo Baggins"){
+   $(this).append(ring)}
+ 
   // hint: Frodo does not have an id, but there is a command to retrieve all elements with a certain class. This should give you an array for you to access . . .
 
   // when you think you have given Frodo the ring, check in your Elements tab
-
-};
+  
+})};
 
 // COMMIT YOUR WORK
 // The commit message should read: "Chapter 3 complete - Made the ring and gave it to Frodo".
