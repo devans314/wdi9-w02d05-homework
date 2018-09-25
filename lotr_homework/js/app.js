@@ -40,18 +40,20 @@ const lands = [
 // ============
 // Chapter 1
 // ============
+const body = $("body");
 const makeMiddleEarth = () => {
 
   // HINT: Make a console.log for each of your functions to make sure that, when you click, the correct function is being called!
 
   console.log("Trying to make middle earth.");
-
+  
   // 1. create a section tag with an id of middle-earth
-
+   const midEarth = $('<section id = Middle-earth></section');
+  
   // 2. append the section to the body of the DOM.
-
+  body.append(midEarth);
   // 3. use a for loop to iterate over the lands array that does the following:
-
+  
   //   3a. creates an article tag (there should be one for each land when the loop is done)
 
   //   3b. gives each land article an `id` tag of the corresponding land name
@@ -60,7 +62,18 @@ const makeMiddleEarth = () => {
 
   //   3d. appends each land to the middle-earth section
 
+  for(let i = 0; i < lands.length; i++){
+    const article = $('<article></article>')
+    
+    // attr: Get the value of an attribute for the first element in the set of matched elements or set one or more attributes for every matched element.
+    article.attr("id",lands[i]);
+    // Get the HTML contents of the first element in the set of matched elements or set the HTML contents of every matched element.
+    article.html(`<h1>${lands[i]}</h1>`);
+    midEarth.append(article);
+
+
 };
+}
 
 // COMMIT YOUR WORK
 // The commit message should read: "Chapter 1 complete - Made Middle Earth".
@@ -229,15 +242,15 @@ const itsDangerousToGoAlone = () => {
 // ============
 // Chapter 12
 // ============
-const weWantsIt = () => {
+// const weWantsIt = () => {
 
-  // 1. Create a div with an id of 'gollum' and add it to Mordor
+//   // 1. Create a div with an id of 'gollum' and add it to Mordor
 
-  // 2. Move the ring from Frodo and give it to Gollum
+//   // 2. Move the ring from Frodo and give it to Gollum
 
-  // 3. Move Gollum into Mount Doom
+//   // 3. Move Gollum into Mount Doom
 
-};
+// };
 
 // COMMIT YOUR WORK
 // The commit message should read: "Chapter 12 complete - Gollum is trying to get the ring".
@@ -245,15 +258,15 @@ const weWantsIt = () => {
 // ============
 // Chapter 13
 // ============
-const thereAndBackAgain = () => {
+// const thereAndBackAgain = () => {
 
-  // 1. remove Gollum and the Ring from the DOM
+//   // 1. remove Gollum and the Ring from the DOM
 
-  // 2. remove all the baddies from the DOM
+//   // 2. remove all the baddies from the DOM
 
-  // 3. Move all the hobbits back to the shire
+//   // 3. Move all the hobbits back to the shire
 
-};
+// };
 
 // COMMIT YOUR WORK
 // The commit message should read: "Chapter 13 complete -Gollum and the ring are gone, the baddies are done, and the hobbits are back in the shire".
