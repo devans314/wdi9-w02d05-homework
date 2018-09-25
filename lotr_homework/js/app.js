@@ -86,17 +86,20 @@ const makeHobbits = () => {
   console.log('Make hobbits');
 
   // 1. display an unordered list of the hobbits in the shire.
-$('#The-Shire').append('<ul></ul>');
+
 // for each iterates over property values in the hobbit array
-hobbits.forEach(element => {
-  $("#The-Shire ul").append(`<li>${element}</li>`);
+
   // 2. give each hobbit a class of "hobbit"
-  $("#The-Shire ul li").attr("class", "hobbit");
+ 
   // hint: create a 'ul' outside the loop upon which to append the 'li's
 
   // hint: get 'The-Shire' by using its id
-
-})};
+  
+    $('#The-Shire').append(`<ul id='hobbits'></ul>`)
+    for (let i = 0 ; i < hobbits.length; i++) {
+      $('#hobbits').append(`<li class='hobbit'>${hobbits[i]}</li>`)
+    }
+  };
 
 // COMMIT YOUR WORK
 // The commit message should read: "Chapter 2 complete - Made the Hobbits".
@@ -105,20 +108,19 @@ hobbits.forEach(element => {
 // Chapter 3
 // ============
 const keepItSecretKeepItSafe = () => {
-
+  
   // 1. create an empty div with an id of 'the-ring'
-const ring = "<div id ='the-ring'></div>";
+  
   // 2. add the ring as a child of Frodo
   // .each iterates over a jquery object and executes a function for matched elements
-  $(".hobbit").each(function(){
-  if($(this).text() === "Frodo Baggins"){
-   $(this).append(ring)}
+  
  
   // hint: Frodo does not have an id, but there is a command to retrieve all elements with a certain class. This should give you an array for you to access . . .
 
   // when you think you have given Frodo the ring, check in your Elements tab
   
-})};
+  $($('.hobbit').toArray()[0]).append('<div id="the-ring"></div>')
+};
 
 // COMMIT YOUR WORK
 // The commit message should read: "Chapter 3 complete - Made the ring and gave it to Frodo".
@@ -129,11 +131,15 @@ const ring = "<div id ='the-ring'></div>";
 const makeBaddies = () => {
 
   // 1. display an unordered list of baddies in Mordor
-
+$('#Mordor').append(`<ul id='baddies'></ul>`);
+for (let i = 0; i < baddies.length; i++) {
+  $('#baddies').append(`<li class='baddy'>${baddies[i]}</li>`)
+}
+};
   // 2. give each of the baddies a class of "baddy"
 
   // 3. remember to append them to Mordor
-};
+
 
 // COMMIT YOUR WORK
 // The commit message should read: "Chapter 4 complete - Made the Baddies"..
