@@ -86,14 +86,17 @@ const makeHobbits = () => {
   console.log('Make hobbits');
 
   // 1. display an unordered list of the hobbits in the shire.
-
+$('#The-Shire').append('<ul></ul>');
+// for each iterates over property values in the hobbit array
+hobbits.forEach(element => {
+  $("#The-Shire ul").append(`<li>${element}</li>`);
   // 2. give each hobbit a class of "hobbit"
-
+  $("#The-Shire ul li").attr("class", "hobbit");
   // hint: create a 'ul' outside the loop upon which to append the 'li's
 
   // hint: get 'The-Shire' by using its id
 
-};
+})};
 
 // COMMIT YOUR WORK
 // The commit message should read: "Chapter 2 complete - Made the Hobbits".
@@ -104,7 +107,7 @@ const makeHobbits = () => {
 const keepItSecretKeepItSafe = () => {
 
   // 1. create an empty div with an id of 'the-ring'
-
+const ring = "<div id = the-ring></div>"
   // 2. add the ring as a child of Frodo
 
   // hint: Frodo does not have an id, but there is a command to retrieve all elements with a certain class. This should give you an array for you to access . . .
@@ -242,7 +245,7 @@ const itsDangerousToGoAlone = () => {
 // ============
 // Chapter 12
 // ============
-// const weWantsIt = () => {
+const weWantsIt = () => {
 
 //   // 1. Create a div with an id of 'gollum' and add it to Mordor
 
@@ -250,7 +253,7 @@ const itsDangerousToGoAlone = () => {
 
 //   // 3. Move Gollum into Mount Doom
 
-// };
+};
 
 // COMMIT YOUR WORK
 // The commit message should read: "Chapter 12 complete - Gollum is trying to get the ring".
@@ -258,7 +261,7 @@ const itsDangerousToGoAlone = () => {
 // ============
 // Chapter 13
 // ============
-// const thereAndBackAgain = () => {
+const thereAndBackAgain = () => {
 
 //   // 1. remove Gollum and the Ring from the DOM
 
@@ -266,7 +269,7 @@ const itsDangerousToGoAlone = () => {
 
 //   // 3. Move all the hobbits back to the shire
 
-// };
+};
 
 // COMMIT YOUR WORK
 // The commit message should read: "Chapter 13 complete -Gollum and the ring are gone, the baddies are done, and the hobbits are back in the shire".
