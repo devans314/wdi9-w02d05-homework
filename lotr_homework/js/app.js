@@ -202,6 +202,10 @@ $('.buddy:contains("Strider")').text('Aragorn')
 // Chapter 8
 // ============
 const forgeTheFellowShip = () => {
+$('#middle-earth').append('<div id = the-fellowship></div>')
+$('#the-fellowship').append('<h1>"The Fellowship"</h1>')
+$('#the-fellowship').append($('#hobbits'))
+$('#the-fellowship').append($('.buddy-list'))
 
   // 1. create a new div with an id 'the-fellowship'
 
@@ -220,7 +224,7 @@ const forgeTheFellowShip = () => {
 // Chapter 9
 // ============
 const theBalrog = () => {
-
+$('.buddy:contains("Gandalf the Grey")').text('Gandalf the White)').addClass("the-white");
   // 1. change the 'Gandalf' textNode to 'Gandalf the White'
 
   // 2. add a class "the-white" to this element
