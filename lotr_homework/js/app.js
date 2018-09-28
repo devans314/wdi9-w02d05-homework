@@ -1,6 +1,6 @@
 console.log("LOTR homework js file is connected");
 console.log("HINT: Click on the 'Elements' tab to see the elements that you are creating");
-console.log("---------------")
+console.log("---------------") 
 // ==============================
 //       Dramatis Personae
 // ==============================
@@ -48,7 +48,7 @@ const makeMiddleEarth = () => {
   console.log("Trying to make middle earth.");
   
   // 1. create a section tag with an id of middle-earth
-   const midEarth = $('<section id = Middle-earth></section');
+   const midEarth = $('<section id = middle-earth></section');
   
   // 2. append the section to the body of the DOM.
   body.append(midEarth);
@@ -150,12 +150,22 @@ for (let i = 0; i < baddies.length; i++) {
 const makeBuddies = () => {
 
   // 1. create an aside tag and append it to middle-earth below mordor
-
+  const $buddyAside = $('<aside class = "buddies"></aside>')
+  const $buddyList = $('<ul class = "buddy-list"></ul>')
+  buddies.forEach((buddy)=>{
+    const $buddy = $('<li/>').text(buddy).addClass('buddy');
+    $buddy.appendTo($buddyList)
+  })
+  $buddyAside.append($buddyList)
+  $('#middle-earth').append($buddyAside)
+  
+}
   // 2. display an unordered list of buddies in the aside
+
 
   // 3. give each of the buddies a class of "buddy"
 
-};
+
 
 // COMMIT YOUR WORK
 // The commit message should read: "Chapter 5 complete - Made the Buddies".
@@ -164,7 +174,7 @@ const makeBuddies = () => {
 // Chapter 6
 // ============
 const leaveTheShire = () => {
-
+$('.hobbit').parent().appendTo('#middle-earth #Rivendell')
   // 1. grab the hobbits (the ul in which they reside) and move them to Rivendell
 
   // hint: the hobbits ul is a childNode of The-Shire-- there is way to get a list of childNodes
